@@ -19,9 +19,9 @@ function fillTimeTaskTable(arr) {
     for (var i = 0; i < arr.length; i++) {
         var obj = arr[i];
         htmlString += '<tr class="row100">' +
-            '<td class="column100 column1" data-column="column1">'+obj.Title+'</td>' +
-            '<td class="column100 column2" data-column="column2">'+obj.Description+'</td>' +
-            '<td class="column100 column3" data-column="column3">'+obj.Severity+'</td></tr>';
+            '<td class="column100 column1" data-column="column1">'+obj.title+'</td>' +
+            '<td class="column100 column2" data-column="column2">'+obj.description+'</td>' +
+            '<td class="column100 column3" data-column="column3">'+obj.severity+'</td></tr>';
     }
     div.innerHTML = htmlString;
 }
