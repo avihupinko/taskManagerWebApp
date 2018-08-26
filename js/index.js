@@ -21,12 +21,41 @@ function fillTimeTaskTable(arr) {
         htmlString += '<tr class="row100">' +
             '<td class="column100 column1" data-column="column1">'+obj.title+'</td>' +
             '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
-            '<td class="column100 column3" data-column="column3">' + obj.startdate + '</td>' +
-            '<td class="column100 column4" data-column="column4">'+obj.enddate+'</td></tr>';
+            '<td class="column100 column3" data-column="column3">' + obj.startDate + '</td>' +
+            '<td class="column100 column4" data-column="column4">'+obj.endDate+'</td></tr>';
     }
     div.innerHTML = htmlString;
 }
 
+function loadSeverityTasks() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var resp = JSON.parse(this.responseText);
+            fillSeverityTaskTable(resp);
+        }
+    };
+
+
+    xhttp.open("GET", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/severitytask", true);
+    xhttp.send();
+}
+
+function fillSeverityTaskTable(arr) {
+    var htmlString = "";
+    var div = document.getElementById("SeverityTaskBody");
+    for (var i = 0; i < arr.length; i++) {
+        var obj = arr[i];
+        htmlString += '<tr class="row100">' +
+            '<td class="column100 column1" data-column="column1">' + obj.title + '</td>' +
+            '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
+            '<td class="column100 column3" data-column="column3">' + obj.severity + '</td></tr>';
+    }
+    div.innerHTML = htmlString;
+}
+
+
 function onload() {
     loadTimeTasks();
+    loadSeverityTasks();
 }
