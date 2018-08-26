@@ -3,6 +3,8 @@ var modal = document.getElementById('myModal');
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+var timeTasks = [];
+var severityTasks = [];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
@@ -36,13 +38,14 @@ function fillTimeTaskTable(arr) {
     var div = document.getElementById("TimeTaskBody");
     for (var i = 0; i < arr.length; i++) {
         var obj = arr[i];
-        htmlString += '<tr class="row100"onclick="showTimeTask(' + obj + ')">' +
+        htmlString += '<tr class="row100"onclick="showTimeTask(' + i + ')">' +
             '<td class="column100 column1" data-column="column1">'+obj.title+'</td>' +
             '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
             '<td class="column100 column3" data-column="column3">' + obj.startDate + '</td>' +
             '<td class="column100 column4" data-column="column4">'+obj.endDate+'</td></tr>';
     }
     div.innerHTML = htmlString;
+    timeTasks = arr;
 }
 
 function loadSeverityTasks() {
@@ -64,12 +67,13 @@ function fillSeverityTaskTable(arr) {
     var div = document.getElementById("SeverityTaskBody");
     for (var i = 0; i < arr.length; i++) {
         var obj = arr[i];
-        htmlString += '<tr class="row100" onclick="showSeverityTask('+obj+')">' +
+        htmlString += '<tr class="row100" onclick="showSeverityTask('+i+')">' +
             '<td class="column100 column1" data-column="column1">' + obj.title + '</td>' +
             '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
             '<td class="column100 column3" data-column="column3">' + obj.severity + '</td></tr>';
     }
     div.innerHTML = htmlString;
+    severityTasks = arr;
 }
 
 

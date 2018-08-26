@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Create New Task</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/v/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/v/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/v/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/v/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/utilTask.css">
+	<link rel="stylesheet" type="text/css" href="css/mainTask.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+    <div class="container-contact100" style="background-image: url('images/bg-01.jpg');">
+        <div class="wrap-contact100">
+            <form class="contact100-form validate-form">
+                <span class="contact100-form-title">
+                    Create New Task
+                </span>
+
+                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Title is required">
+                    <span class="label-input100">Task Title</span>
+                    <input class="input100" type="text" id="Title" name="Title" placeholder="Enter task Title">
+                </div>
+
+                <div class="wrap-input100 rs1-wrap-input100 validate-input">
+                    <span class="label-input100">Task Type</span>
+                    <select class="input100" name="TaskType" id="TaskType" onchange="updateFormType();">
+                        <option value="1" selected>Severity Task</option>
+                        <option value="2">Time Task</option>
+                    </select>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Severity is requierd" id="severitydiv">
+                    <span class="label-input100">Choose task Severity</span>
+                    <select class="input100" name="Severity" id="Severity">
+                        <option value="1" selected>Low</option>
+                        <option value="2">Medium</option>
+                        <option value="3">High</option>
+                        <option value="4">Red</option>
+                    </select>
+                </div>
+
+                <div class="wrap-input100 rs1-wrap-input100" id="date1" style="display:none">
+                    <span class="label-input100">Start Date</span>
+                    <input class="input100" type="date" name="StartDate" id="startDate">
+                </div>
+                <div class="wrap-input100 rs1-wrap-input100" id="date2" style="display:none">
+                    <span class="label-input100">End Date</span>
+                    <input class="input100" type="date" name="EndDate" id="endDate">
+                </div>
+
+
+                <div class="wrap-input100 validate-input" data-validate="Description is required">
+                    <span class="label-input100">Description</span>
+                    <textarea class="input100" name="Description" id="description" placeholder="Your description here..."></textarea>
+                </div>
+
+                <div class="container-contact100-form-btn">
+                    <div class="wrap-contact100-form-btn">
+                        <div class="contact100-form-bgbtn"></div>
+                        <button class="contact100-form-btn" >
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+
+
+
+    <div id="dropDownSelect1"></div>
+
+    <!--===============================================================================================-->
+    <script src="/v/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/v/bootstrap/js/popper.js"></script>
+    <script src="/v/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/v/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/mainTask.js"></script>
+    <script src="js/newTask.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+
+</body>
+</html>
