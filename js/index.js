@@ -20,8 +20,9 @@ function fillTimeTaskTable(arr) {
         var obj = arr[i];
         htmlString += '<tr class="row100">' +
             '<td class="column100 column1" data-column="column1">'+obj.title+'</td>' +
-            '<td class="column100 column2" data-column="column2">'+obj.description+'</td>' +
-            '<td class="column100 column3" data-column="column3">'+obj.severity+'</td></tr>';
+            '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
+            '<td class="column100 column3" data-column="column3">' + obj.startdate + '</td>' +
+            '<td class="column100 column4" data-column="column4">'+obj.enddate+'</td></tr>';
     }
     div.innerHTML = htmlString;
 }
