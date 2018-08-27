@@ -2,7 +2,7 @@ var modal = document.getElementById('myModal');
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
+var selectedIndex;
 var timeTasks = [];
 var severityTasks = [];
 
@@ -83,13 +83,29 @@ function onload() {
     loadSeverityTasks();
 }
 
-function showSeverityTask(obj) {
-
+function showSeverityTask(index) {
+    document.getElementById("timebox").style.display = "none";
+    document.getElementById("severitybox").style.display = "";
+    var obj = severityTasks[index];
+    document.getElementById("Title").innerText = obj.title;
+    document.getElementById("Description").innerText = obj.description;
+    document.getElementById("severity").innerText = (obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red")))
     modal.style.display = "block";
+    selectedIndex = index;
 }
 
-function showTimeTask(obj) {
+function showTimeTask(index) {
+    document.getElementById("timebox").style.display = "";
+    document.getElementById("severitybox").style.display = "none";
+    var obj = severityTasks[index];
+    document.getElementById("Title").innerText = obj.title;
+    document.getElementById("Description").innerText = obj.description;
 
+    var st = (obj.startDate != null ? (new Date(obj.startDate)).toLocaleDateString() : "");
+    var ed = (obj.startDate != null ? (new Date(obj.endDate)).toLocaleDateString() : "");
+
+    document.getElementById("time").innerText = "From Date: " + st + " To Date: " + ed;
     modal.style.display = "block";
+    selectedIndex = index;
 }
 
