@@ -118,8 +118,9 @@ function deleteTask() {
             type: "DELETE",
             url: "https://taskmanagerapi-avihupinko.azurewebsites.net/api/timeTask/" + (timeTasks[selectedIndex]).id,
             success: function (msg) {
-                alert("Data Deleted: " + msg);
+                alert("Task deleted");
                 loadTimeTasks();
+                modal.style.display = "none";
             }
         });
     } else {
@@ -127,8 +128,9 @@ function deleteTask() {
             type: "DELETE",
             url: "https://taskmanagerapi-avihupinko.azurewebsites.net/api/severityTask/" + (severityTasks[selectedIndex]).id,
             success: function (msg) {
-                alert("Data Deleted: " + msg);
+                alert("Task deleted");
                 loadSeverityTasks();
+                modal.style.display = "none";
             }
         });
     }
