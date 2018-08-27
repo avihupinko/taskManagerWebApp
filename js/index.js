@@ -118,7 +118,7 @@ function showTimeTask(index) {
         document.getElementById("startDate").value = getDateFormat(new Date(obj.startDate));
     }
     if (obj.endDate != null) {
-        document.getElementById("endDate").value = getDateFormat(new Date(obj.endtDate));
+        document.getElementById("endDate").value = getDateFormat(new Date(obj.endDate));
     }
     modal.style.display = "block";
     selectedIndex = index;
