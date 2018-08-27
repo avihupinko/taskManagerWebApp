@@ -162,7 +162,7 @@ th, td {
 .ver5::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #D62929;
+    background-color: #000000;
 }
 
 /*==================================================================
@@ -171,7 +171,7 @@ th, td {
     border-radius: 16px;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 40vh;
+    max-height: 40vh;
     background: #7918f2;
     background: -webkit-linear-gradient(-68deg, #ac32e4, #4801ff);
     background: -o-linear-gradient(-68deg, #ac32e4, #4801ff);
