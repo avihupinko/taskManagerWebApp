@@ -23,8 +23,8 @@
 </head>
 <body onload="onload()">
 
-    <div class="limiter" >
-        <div class="container-table100" >
+    <div class="limiter">
+        <div class="container-table100">
             <div class="wrap-table100">
                 <h2>Severity Tasks</h2>
                 <div class="table100 ver5 m-b-110">
@@ -56,24 +56,37 @@
                 </div>
 
             </div>
-            <button class="button" onclick="window.location.href = '/newTask.html'"> Create New Task </button>
+
         </div>
     </div>
-
+    <button class="button" onclick="window.location.href = '/newTask.html'"> Create New Task </button>
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2 id="Title"></h2>
+            <form>
+                <label for="Title">Title</label>
+                <input type="text" id="Title" disabled>
+                <div id="timebox">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" disabled>
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" disabled>
+                </div>
+                <div id="severitybox">
+                    <h3 id="severity"></h3>
+                    <label for="severity">Severity</label>
+                    <input type="text" id="severity" disabled>
+                </div>
 
-            <div id="timebox">
-                <h3 id="time"></h3>
-            </div>
-            <div id="severitybox">
-                <h3 id="severity"></h3>
-            </div>
-            <h3 id="Description"></h3>
+
+                <label for="Description">description</label>
+                <textarea id="Description" disabled></textarea>
+            </form>
+
+
+
             <div>
                 <button class="button" onclick="deleteTask()">Delete Task</button>
                 <button class="button2" onclick="editTask()">Edit Task</button>

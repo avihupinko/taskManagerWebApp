@@ -99,9 +99,9 @@ function showSeverityTask(index) {
     document.getElementById("timebox").style.display = "none";
     document.getElementById("severitybox").style.display = "";
     var obj = severityTasks[index];
-    document.getElementById("Title").innerText = "Title: " + obj.title;
-    document.getElementById("Description").innerText = "Description: " +obj.description;
-    document.getElementById("severity").innerText = "Severity: "+ (obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red")))
+    document.getElementById("Title").value = obj.title;
+    document.getElementById("Description").value = obj.description;
+    document.getElementById("severity").value = (obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red")))
     modal.style.display = "block";
     selectedIndex = index;
     selectedType = "Severity";
@@ -111,16 +111,25 @@ function showTimeTask(index) {
     document.getElementById("timebox").style.display = "";
     document.getElementById("severitybox").style.display = "none";
     var obj = timeTasks[index];
-    document.getElementById("Title").innerText = "Title: " + obj.title;
-    document.getElementById("Description").innerText = "Description: " + obj.description;
+    document.getElementById("Title").value = obj.title;
+    document.getElementById("Description").value = obj.description;
 
-    var st = (obj.startDate != null ? (new Date(obj.startDate)).toLocaleDateString() : "");
-    var ed = (obj.startDate != null ? (new Date(obj.endDate)).toLocaleDateString() : "");
-
-    document.getElementById("time").innerText = "From Date: " + st + " To Date: " + ed;
+    if (obj.startDate != null) {
+        document.getElementById("startDate").value = getDateFormat(new Date(obj.startDate));
+    }
+    if (obj.endDate != null) {
+        document.getElementById("endDate").value = getDateFormat(new Date(obj.endtDate));
+    }
     modal.style.display = "block";
     selectedIndex = index;
     selectedType = "Time";
+}
+
+function getDateFormat(date) {
+    var now = new Date(date);
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    return now.getFullYear() + "-" + (month) + "-" + (day);
 }
 
 function deleteTask() {
