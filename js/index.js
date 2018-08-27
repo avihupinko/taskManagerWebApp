@@ -97,7 +97,7 @@ function showSeverityTask(index) {
 function showTimeTask(index) {
     document.getElementById("timebox").style.display = "";
     document.getElementById("severitybox").style.display = "none";
-    var obj = severityTasks[index];
+    var obj = timeTasks[index];
     document.getElementById("Title").innerText = "Title: " + obj.title;
     document.getElementById("Description").innerText = "Description: " + obj.description;
 
