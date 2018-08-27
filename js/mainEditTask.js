@@ -16,7 +16,7 @@
             }
         }
         if (check == true) {
-            submitForm();
+            submitUpdateForm();
         }
         
         return false;

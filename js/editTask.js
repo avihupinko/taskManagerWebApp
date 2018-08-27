@@ -16,7 +16,7 @@ function updateFormType() {
     }
 }
 
-function submitForm() {
+function submitUpdateForm() {
     var title = document.getElementById("Title").value;
     var desc = document.getElementById("description").value;
     var type = document.getElementById("TaskType").value;
