@@ -18,7 +18,7 @@ function updateFormType() {
 
 function submitUpdateForm() {
     var title = document.getElementById("Title").value;
-    var desc = document.getElementById("description").value;
+    var desc = document.getElementById("Description").value;
     var type = document.getElementById("TaskType").value;
     if (title == "") {
         alert("Missing task Title");
