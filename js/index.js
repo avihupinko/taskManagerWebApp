@@ -45,7 +45,7 @@ function fillTimeTaskTable(arr) {
             var obj = arr[i];
             htmlString += '<tr class="row100"onclick="showTimeTask(' + i + ')">' +
                 '<td class="column100 column1" data-column="column1">' + obj.title + '</td>' +
-                '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
+                '<td class="column100 column2" data-column="column2">' + (obj.description.length < 30 ? obj.description : (obj.description).toString().substring(0,30))+ '</td>' +
                 '<td class="column100 column3" data-column="column3">' + (obj.startDate != null ? (new Date(obj.startDate)).toLocaleDateString() : "") + '</td>' +
                 '<td class="column100 column4" data-column="column4">' + (obj.startDate != null ? (new Date(obj.endDate)).toLocaleDateString() : "") + '</td></tr>';
         }
@@ -81,7 +81,7 @@ function fillSeverityTaskTable(arr) {
             obj.severity = (obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red")));
             htmlString += '<tr class="row100" onclick="showSeverityTask(' + i + ')">' +
                 '<td class="column100 column1" data-column="column1">' + obj.title + '</td>' +
-                '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
+                '<td class="column100 column2" data-column="column2">' + (obj.description.length < 30 ? obj.description : (obj.description).toString().substring(0, 30)) + '</td>' +
                 '<td class="column100 column3" data-column="column3">' + obj.severity + '</td></tr>';
         }
     }
