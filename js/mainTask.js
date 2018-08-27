@@ -16,7 +16,10 @@
             }
         }
         if (document.getElementById("TaskType").value == 2) {
-            check = validateDates();
+            if (!validateDates()) {
+                alert("End date cannot be lower than Start date");
+                check == false;
+            }
         }
         if (check == true) {
             submitForm();
