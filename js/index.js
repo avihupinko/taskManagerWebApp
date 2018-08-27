@@ -3,6 +3,7 @@ var modal = document.getElementById('myModal');
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 var selectedIndex;
+var selectedType;
 var timeTasks = [];
 var severityTasks = [];
 
@@ -92,6 +93,7 @@ function showSeverityTask(index) {
     document.getElementById("severity").innerText = "Severity: "+ (obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red")))
     modal.style.display = "block";
     selectedIndex = index;
+    selectedType = "Severity";
 }
 
 function showTimeTask(index) {
@@ -107,5 +109,19 @@ function showTimeTask(index) {
     document.getElementById("time").innerText = "From Date: " + st + " To Date: " + ed;
     modal.style.display = "block";
     selectedIndex = index;
+    selectedType = "Time";
 }
 
+function deleteTask() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onload = function () {
+        onload();
+    };
+
+    if (selectedType == "Time") {
+        xhttp.open("DELETE", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/timeTask/" + (timeTasks[selectedIndex]).id, true);
+    } else {
+        xhttp.open("DELETE", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/severityTask/" + (severityTasks[selectedIndex]).id, true);
+    }
+    xhttp.send();
+}
