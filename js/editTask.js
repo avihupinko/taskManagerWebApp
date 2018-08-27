@@ -27,7 +27,7 @@ function submitUpdateForm() {
         alert("Missing task description");
         
     } else {
-        var url = "Id=" + taskId + "&Title=" + title + "&Description=" + desc;
+        var url = "Id=" + Task.id + "&Title=" + title + "&Description=" + desc;
         if (type == 1) {
             var severity = document.getElementById("Severity").value;
             url += "&Severity=" + severity;
