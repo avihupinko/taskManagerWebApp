@@ -15,6 +15,9 @@
                 check=false;
             }
         }
+        if (document.getElementById("TaskType").value == 2) {
+            check = validateDates();
+        }
         if (check == true) {
             submitUpdateForm();
         }

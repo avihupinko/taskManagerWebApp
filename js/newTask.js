@@ -11,6 +11,12 @@ function updateFormType() {
     }
 }
 
+function validateDates() {
+    var sd = new Date(document.getElementById("startDate").value);
+    var ed = new Date(document.getElementById("endDate").value);
+    return sd <= ed;
+}
+
 function submitForm() {
     var title = document.getElementById("Title").value;
     var desc = document.getElementById("description").value;

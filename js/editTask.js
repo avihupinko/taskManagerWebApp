@@ -1,7 +1,11 @@
 var Task;
 var taskType;
 
-
+function validateDates() {
+    var sd = new Date(document.getElementById("startDate").value);
+    var ed = new Date(document.getElementById("endDate").value);
+    return sd <= ed;
+}
 
 function updateFormType() {
     var type = document.getElementById("TaskType").value;
