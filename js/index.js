@@ -113,15 +113,34 @@ function showTimeTask(index) {
 }
 
 function deleteTask() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onload = function () {
-        onload();
-    };
-
     if (selectedType == "Time") {
-        xhttp.open("DELETE", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/timeTask/" + (timeTasks[selectedIndex]).id, true);
+        $.ajax({
+            type: "DELETE",
+            url: "https://taskmanagerapi-avihupinko.azurewebsites.net/api/timeTask/" + (timeTasks[selectedIndex]).id,
+            success: function (msg) {
+                alert("Data Deleted: " + msg);
+                loadTimeTasks();
+            }
+        });
     } else {
-        xhttp.open("DELETE", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/severityTask/" + (severityTasks[selectedIndex]).id, true);
+        $.ajax({
+            type: "DELETE",
+            url: "https://taskmanagerapi-avihupinko.azurewebsites.net/api/severityTask/" + (severityTasks[selectedIndex]).id,
+            success: function (msg) {
+                alert("Data Deleted: " + msg);
+                loadSeverityTasks();
+            }
+        });
     }
-    xhttp.send();
+    //var xhttp = new XMLHttpRequest();
+    //xhttp.onload = function () {
+    //    onload();
+    //};
+
+    //if (selectedType == "Time") {
+    //    xhttp.open("DELETE", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/timeTask/" + (timeTasks[selectedIndex]).id, true);
+    //} else {
+    //    xhttp.open("DELETE", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/severityTask/" + (severityTasks[selectedIndex]).id, true);
+    //}
+    //xhttp.send();
 }
