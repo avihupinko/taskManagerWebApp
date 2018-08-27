@@ -27,8 +27,8 @@ function submitForm() {
             var severity = document.getElementById("Severity").value;
             url += "&Severity=" + severity;
         } else {
-            var sd = document.getElementById("StartDate").value;
-            var ed = document.getElementById("EndDate").value;
+            var sd = document.getElementById("startDate").value;
+            var ed = document.getElementById("endDate").value;
             url += "&StartDate=" + sd + "&EndDate=" + ed;
         }
         SubmitTask(type, url);
