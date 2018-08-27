@@ -132,7 +132,7 @@ function fillForm(task) {
         // severity is defualt and becuase of that it has less actions
         document.getElementById("Severity").value = task.severity;
     }
-    var Task = task;
+    Task = task;
 }
 
 function getDateFormat(date) {
