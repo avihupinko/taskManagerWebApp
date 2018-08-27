@@ -87,9 +87,9 @@ function showSeverityTask(index) {
     document.getElementById("timebox").style.display = "none";
     document.getElementById("severitybox").style.display = "";
     var obj = severityTasks[index];
-    document.getElementById("Title").innerText = obj.title;
-    document.getElementById("Description").innerText = obj.description;
-    document.getElementById("severity").innerText = (obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red")))
+    document.getElementById("Title").innerText = "Title: " + obj.title;
+    document.getElementById("Description").innerText = "Description: " +obj.description;
+    document.getElementById("severity").innerText = "Severity: "+ (obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red")))
     modal.style.display = "block";
     selectedIndex = index;
 }
