@@ -29,7 +29,7 @@ function submitForm() {
         } else {
             var sd = document.getElementById("StartDate").value;
             var ed = document.getElementById("EndDate").value;
-            url += "&Startdate=" + sd + "&EndDate=" + ed;
+            url += "&StartDate=" + sd + "&EndDate=" + ed;
         }
         SubmitTask(type, url);
     }
