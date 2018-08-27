@@ -134,15 +134,15 @@ function deleteTask() {
             }
         });
     }
-    //var xhttp = new XMLHttpRequest();
-    //xhttp.onload = function () {
-    //    onload();
-    //};
+    
+}
 
-    //if (selectedType == "Time") {
-    //    xhttp.open("DELETE", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/timeTask/" + (timeTasks[selectedIndex]).id, true);
-    //} else {
-    //    xhttp.open("DELETE", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/severityTask/" + (severityTasks[selectedIndex]).id, true);
-    //}
-    //xhttp.send();
+function editTask() {
+    
+    if (selectedType == "Time") {
+        window.location.href = "/editTask.html?Id=" + (timeTasks[selectedIndex]).id + "&Type=Time" ;
+    } else {
+        window.location.href = "/editTask.html?Id=" + (severityTasks[selectedIndex]).id +"&Type=Severity";
+    }
+    
 }
