@@ -98,8 +98,8 @@ function showTimeTask(index) {
     document.getElementById("timebox").style.display = "";
     document.getElementById("severitybox").style.display = "none";
     var obj = severityTasks[index];
-    document.getElementById("Title").innerText = obj.title;
-    document.getElementById("Description").innerText = obj.description;
+    document.getElementById("Title").innerText = "Title: " + obj.title;
+    document.getElementById("Description").innerText = "Description: " + obj.description;
 
     var st = (obj.startDate != null ? (new Date(obj.startDate)).toLocaleDateString() : "");
     var ed = (obj.startDate != null ? (new Date(obj.endDate)).toLocaleDateString() : "");
