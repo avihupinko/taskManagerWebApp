@@ -66,14 +66,18 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form class="form-inline">
+            <form >
                 <label for="Title">Title</label>
                 <input type="text" id="Title" disabled>
                 <div id="timebox">
-                    <label for="startDate">Start Date</label>
-                    <input type="date" id="startDate" disabled>
-                    <label for="endDate">End Date</label>
-                    <input type="date" id="endDate" disabled>
+                    <span style="display:inline-block">
+                        <label for="startDate" style="display:block">Start Date</label>
+                        <input type="date" id="startDate" disabled>
+                    </span>
+                    <span style="display:inline-block">
+                        <label for="endDate" style="display:block">End Date</label>
+                        <input type="date" id="endDate" disabled>
+                    </span>
                 </div>
                 <div id="severitybox">
                     <label for="severity">Severity</label>
