@@ -37,13 +37,18 @@ function loadTimeTasks() {
 function fillTimeTaskTable(arr) {
     var htmlString = "";
     var div = document.getElementById("TimeTaskBody");
-    for (var i = 0; i < arr.length; i++) {
-        var obj = arr[i];
-        htmlString += '<tr class="row100"onclick="showTimeTask(' + i + ')">' +
-            '<td class="column100 column1" data-column="column1">'+obj.title+'</td>' +
-            '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
-            '<td class="column100 column3" data-column="column3">' + (obj.startDate != null ? (new Date(obj.startDate)).toLocaleDateString(): "") + '</td>' +
-            '<td class="column100 column4" data-column="column4">' + (obj.startDate != null ?(new Date(obj.endDate)).toLocaleDateString(): "" )+'</td></tr>';
+    if (arr.length == 0) {
+        htmlString += '<tr class="row100">' +
+            '<td class="column100 column1" data-column="column1"> There are no active time tasks </td></tr>';
+    } else {
+        for (var i = 0; i < arr.length; i++) {
+            var obj = arr[i];
+            htmlString += '<tr class="row100"onclick="showTimeTask(' + i + ')">' +
+                '<td class="column100 column1" data-column="column1">' + obj.title + '</td>' +
+                '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
+                '<td class="column100 column3" data-column="column3">' + (obj.startDate != null ? (new Date(obj.startDate)).toLocaleDateString() : "") + '</td>' +
+                '<td class="column100 column4" data-column="column4">' + (obj.startDate != null ? (new Date(obj.endDate)).toLocaleDateString() : "") + '</td></tr>';
+        }
     }
     div.innerHTML = htmlString;
     timeTasks = arr;
@@ -66,13 +71,19 @@ function loadSeverityTasks() {
 function fillSeverityTaskTable(arr) {
     var htmlString = "";
     var div = document.getElementById("SeverityTaskBody");
-    for (var i = 0; i < arr.length; i++) {
-        var obj = arr[i];
-        obj.severity = (obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red")));
-        htmlString += '<tr class="row100" onclick="showSeverityTask('+i+')">' +
-            '<td class="column100 column1" data-column="column1">' + obj.title + '</td>' +
-            '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
-            '<td class="column100 column3" data-column="column3">' + obj.severity + '</td></tr>';
+    if (arr.length == 0) {
+        htmlString += '<tr class="row100" >' +
+            '<td class="column100 column1" data-column="column1"> There are no active severity tasks </td></tr>';
+
+    } else {
+        for (var i = 0; i < arr.length; i++) {
+            var obj = arr[i];
+            obj.severity = (obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red")));
+            htmlString += '<tr class="row100" onclick="showSeverityTask(' + i + ')">' +
+                '<td class="column100 column1" data-column="column1">' + obj.title + '</td>' +
+                '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
+                '<td class="column100 column3" data-column="column3">' + obj.severity + '</td></tr>';
+        }
     }
     div.innerHTML = htmlString;
     severityTasks = arr;
