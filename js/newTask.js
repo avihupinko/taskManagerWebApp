@@ -47,7 +47,7 @@ function SubmitTask( type , url ) {
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
         // do something to response
-        console.log(this.responseText);
+        window.location = "/index.html";
     };
     xhr.send();
 
