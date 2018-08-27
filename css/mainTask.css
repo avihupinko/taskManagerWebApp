@@ -130,21 +130,22 @@ iframe {
 [ Contact ]*/
 
 .container-contact100 {
-  width: 100%;  
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+    width: 100%;
+    background: #B9D7E5;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 .wrap-contact100 {
@@ -267,22 +268,17 @@ textarea.input100 {
 }
 
 .contact100-form-bgbtn {
-  position: absolute;
-  z-index: -1;
-  width: 300%;
-  height: 100%;
-  background: #df2351;
-  background: -webkit-linear-gradient(right, #2f91ff, #00c513, #2f91ff, #00c513);
-  background: -o-linear-gradient(right, #2f91ff, #00c513, #2f91ff, #00c513);
-  background: -moz-linear-gradient(right, #2f91ff, #00c513, #2f91ff, #00c513);
-  background: linear-gradient(right, #2f91ff, #00c513, #2f91ff, #00c513);
-  top: 0;
-  left: -100%;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
+    position: absolute;
+    z-index: -1;
+    width: 300%;
+    height: 100%;
+    background: #9BE5B9;
+    top: 0;
+    left: -100%;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
 }
 
 .contact100-form-btn {
