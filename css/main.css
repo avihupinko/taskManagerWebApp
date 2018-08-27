@@ -160,9 +160,11 @@ th, td {
     background: linear-gradient(-68deg, #ac32e4, #4801ff);
 }
 
-.table100.ver5 tbody tr:nth-child(even) {
-  background-color: #e9faff;
-}
+    .table100.ver5 tbody tr:nth-child(even) {
+        background-color: #e9faff;
+        overflow: auto;
+        max-height: 40%;
+    }
 
 .table100.ver5 td {
   font-family: Montserrat-Regular;
