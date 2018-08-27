@@ -126,11 +126,18 @@ function fillForm(task) {
     if (taskType == "Time") {
         document.getElementById("TaskType").value = 2;
         updateFormType();
-        document.getElementById("startDate").value = new Date(task.startDate);
-        document.getElementById("endDate").value = new Date(task.endDate);
+        document.getElementById("startDate").value = getDateFormat(task.startDate);
+        document.getElementById("endDate").value = getDateFormat(task.endDate);
     } else {
         // severity is defualt and becuase of that it has less actions
         document.getElementById("Severity").value = task.severity;
     }
     var Task = task;
+}
+
+function getDateFormat(date) {
+    var now = new Date(date);
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    return now.getFullYear() + "-" + (month) + "-" + (day);
 }
