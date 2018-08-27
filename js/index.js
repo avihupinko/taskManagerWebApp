@@ -101,7 +101,7 @@ function showSeverityTask(index) {
     var obj = severityTasks[index];
     document.getElementById("Title").value = obj.title;
     document.getElementById("Description").value = obj.description;
-    document.getElementById("severity").value = (obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red")))
+    document.getElementById("severity").value = obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red"));
     modal.style.display = "block";
     selectedIndex = index;
     selectedType = "Severity";
