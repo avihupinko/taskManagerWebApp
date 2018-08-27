@@ -152,7 +152,8 @@ th, td {
 [ Ver5 ]*/
 .table100.ver5 {
     border-radius: 16px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     height: 40vh;
     background: #7918f2;
     background: -webkit-linear-gradient(-68deg, #ac32e4, #4801ff);
