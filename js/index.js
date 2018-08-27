@@ -67,6 +67,7 @@ function fillSeverityTaskTable(arr) {
     var div = document.getElementById("SeverityTaskBody");
     for (var i = 0; i < arr.length; i++) {
         var obj = arr[i];
+        obj.severity = (obj.severity == 1 ? "Low" : (obj.severity == 2 ? "Meduim" : (obj.severity == 3 ? "High" : "Red")));
         htmlString += '<tr class="row100" onclick="showSeverityTask('+i+')">' +
             '<td class="column100 column1" data-column="column1">' + obj.title + '</td>' +
             '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
