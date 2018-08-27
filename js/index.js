@@ -41,8 +41,8 @@ function fillTimeTaskTable(arr) {
         htmlString += '<tr class="row100"onclick="showTimeTask(' + i + ')">' +
             '<td class="column100 column1" data-column="column1">'+obj.title+'</td>' +
             '<td class="column100 column2" data-column="column2">' + obj.description + '</td>' +
-            '<td class="column100 column3" data-column="column3">' + (new Date(obj.startDate)).toLocaleDateString() + '</td>' +
-            '<td class="column100 column4" data-column="column4">' + (new Date(obj.endDate)).toLocaleDateString()+'</td></tr>';
+            '<td class="column100 column3" data-column="column3">' + (obj.startDate != null ? (new Date(obj.startDate)).toLocaleDateString(): "") + '</td>' +
+            '<td class="column100 column4" data-column="column4">' + (obj.startDate != null ?(new Date(obj.endDate)).toLocaleDateString(): "" )+'</td></tr>';
     }
     div.innerHTML = htmlString;
     timeTasks = arr;
