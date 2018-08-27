@@ -37,16 +37,29 @@ function submitForm() {
 
 
 function SubmitTask( type , url ) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            // TODO redirect
-        }
-    };
+    var xhr = new XMLHttpRequest();
     if (type == 1) {
-        xhttp.open("POST", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/severityTask/" + url, true);
+        xhr.open("POST", 'https://taskmanagerapi-avihupinko.azurewebsites.net/api/severityTask/' + url, true);
     } else {
-        xhttp.open("POST", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/timeTask/" + url, true);
+        xhr.open("POST", 'https://taskmanagerapi-avihupinko.azurewebsites.net/api/timeTask/' + url, true);
     }
-    xhttp.send();
+    
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = function () {
+        // do something to response
+        console.log(this.responseText);
+    };
+    xhr.send();
+
+    //xhttp.onreadystatechange = function () {
+    //    if (this.readyState == 4 && this.status == 200) {
+    //        // TODO redirect
+    //    }
+    //};
+    //if (type == 1) {
+    //    xhttp.open("POST", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/severityTask/" + url, true);
+    //} else {
+    //    xhttp.open("POST", "https://taskmanagerapi-avihupinko.azurewebsites.net/api/timeTask/" + url, true);
+    //}
+    //xhttp.send();
 }

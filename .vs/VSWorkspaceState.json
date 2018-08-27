@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\css",
+    "\\fonts",
+    "\\images",
+    "\\images\\icons",
     "\\js"
   ],
-  "SelectedNode": "\\js\\index.js",
+  "SelectedNode": "\\images",
   "PreviewInSolutionExplorer": false
 }
