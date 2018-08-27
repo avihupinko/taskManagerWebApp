@@ -1,6 +1,8 @@
 var Task;
 var taskType;
 
+
+
 function updateFormType() {
     var type = document.getElementById("TaskType").value;
     if (type == 1) {
@@ -72,7 +74,7 @@ function alertAndReturn(message){
 }
 
 function queryParams(str) {
-    var obj;
+    var obj = {};
     var arr = ((str.split('?'))[1]).split('&');
     if (arr.length < 2) {
         alertAndReturn("Error: Task Id or Type weren't provided");
